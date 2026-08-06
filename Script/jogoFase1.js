@@ -44,6 +44,33 @@ function desenharParedes() {
   ctx.restore();
 }
 
+const MOSTRAR_INTERACOES = true;
+
+function desenharInteracoes() {
+  if (!MOSTRAR_INTERACOES) return;
+
+  ctx.save();
+  ctx.lineWidth = 1;
+
+  (Fase1.interacoes || []).forEach((zona) => {
+    if (zona.tipo === "porta") {
+      ctx.fillStyle = "rgba(0, 200, 0, 0.35)";
+      ctx.strokeStyle = "lime";
+    } else if (zona.tipo === "texto") {
+      ctx.fillStyle = "rgba(0, 120, 255, 0.35)";
+      ctx.strokeStyle = "dodgerblue";
+    } else {
+      ctx.fillStyle = "rgba(255, 255, 0, 0.35)";
+      ctx.strokeStyle = "yellow";
+    }
+
+    ctx.fillRect(zona.x, zona.y, zona.width, zona.height);
+    ctx.strokeRect(zona.x, zona.y, zona.width, zona.height);
+  });
+
+  ctx.restore();
+}
+
 const input = {
   direita: false,
   esquerda: false,
@@ -106,6 +133,64 @@ function desenharGrid() {
   }
 }
 
+const caixaDialogo = document.querySelector("#caixa-dialogo");
+const textoDialogo = document.querySelector("#texto-dialogo");
+
+let interacaoAtiva = null;
+let timeoutTexto = null;
+
+function colide(personagem, zona) {
+  return (
+    personagem.x < zona.x + zona.width &&
+    personagem.x + personagem.tamanho > zona.x &&
+    personagem.y < zona.y + zona.height &&
+    personagem.y + personagem.tamanho > zona.y
+  );
+}
+
+function mostrarTexto(texto, duracaoMs) {
+  if (!caixaDialogo || !textoDialogo) return;
+
+  textoDialogo.textContent = texto;
+  caixaDialogo.classList.remove("oculto");
+
+  if (timeoutTexto) clearTimeout(timeoutTexto);
+
+  timeoutTexto = setTimeout(() => {
+    caixaDialogo.classList.add("oculto");
+    timeoutTexto = null;
+  }, duracaoMs);
+}
+
+function irParaPorta(destino) {
+  window.location.href = destino;
+}
+
+function verificarInteracoes() {
+  const zonas = Fase1.interacoes || [];
+  let tocandoAlgumaZona = false;
+
+  for (const zona of zonas) {
+    if (colide(jogador, zona)) {
+      tocandoAlgumaZona = true;
+
+      if (interacaoAtiva === zona.id) continue;
+
+      interacaoAtiva = zona.id;
+
+      if (zona.tipo === "porta") {
+        irParaPorta(zona.destino);
+      }
+
+      if (zona.tipo === "texto") {
+        mostrarTexto(zona.texto, zona.duracao || 20000);
+      }
+    }
+  }
+
+  if (!tocandoAlgumaZona) interacaoAtiva = null;
+}
+
 function desenhar() {
   ctx.clearRect(0, 0, tela1.width, tela1.height);
 
@@ -114,8 +199,11 @@ function desenhar() {
   criarCenario2();
 
   desenharParedes();
+  desenharInteracoes();
 
   jogador.atualizar(input);
+
+  verificarInteracoes();
 
   jogador.desenhar(ctx);
 

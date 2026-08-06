@@ -8,8 +8,8 @@ const Fase1 = {
 
   player: {
     velocidade: 4,
-    x: 1024,
-    y: 320,
+    x: 960,
+    y: 896,
     img: "../Imagem/personagens/clara.png",
   },
   plataforma1: [
@@ -52,6 +52,26 @@ const Fase1 = {
       width: 0.5,
       height: 0.5,
       img: "",
+    },
+  ],
+  interacoes: [
+    {
+      id: "porta_casa",
+      x: 1728,
+      y: 704,
+      width: 16,
+      height: 64,
+      tipo: "porta",
+      destino: "fase1.html", // link para a fase dois
+    },
+    {
+      id: "porta_casa2",
+      x: 1728,
+      y: 768,
+      width: 24,
+      height: 64,
+      tipo: "porta",
+      destino: "fase1.html", // link para a fase dois
     },
   ],
   caixa1: {
