@@ -12,7 +12,8 @@ const quadrado = 64;
  
 const jogador = new Personagem(
     Inicio.player.x,
-    Inicio.player.y
+    Inicio.player.y,
+    Inicio
 );
  
 function criarCenario() {
@@ -145,6 +146,7 @@ function desenhar() {
  
   desenharGrid();
   criarCenario();
+  
  
   jogador.atualizar(input);
  

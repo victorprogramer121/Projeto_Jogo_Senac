@@ -1,29 +1,29 @@
 :root {
-    --bg: #071522;
-    --senac-blue: #004A8D;
-    --senac-blue-deep: #00284a;
-    --panel: rgba(0,32,58,0.88);
-    --panel-solid: #0b2036;
-    --panel-2: rgba(0,42,74,0.9);
-    --senac-orange: #F7941D;
-    --senac-orange-light: #FDC180;
-    --pixel-shadow: #00101c;
-    --text: #eef3f8;
-    --text-dim: #9fb8d1;
-    --font-pixel: 'Press Start 2P', monospace;
-    --font-body: 'Pixelify Sans', monospace;
+  --bg: #071522;
+  --senac-blue: #004a8d;
+  --senac-blue-deep: #00284a;
+  --panel: rgba(0, 32, 58, 0.88);
+  --panel-solid: #0b2036;
+  --panel-2: rgba(0, 42, 74, 0.9);
+  --senac-orange: #f7941d;
+  --senac-orange-light: #fdc180;
+  --pixel-shadow: #00101c;
+  --text: #eef3f8;
+  --text-dim: #9fb8d1;
+  --font-pixel: "Press Start 2P", monospace;
+  --font-body: "Pixelify Sans", monospace;
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    overflow-y: hidden;
-    background-color: black;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: black;
 }
 
 #fundo {
