@@ -8,31 +8,50 @@ const Fase1 = {
 
   player: {
     velocidade: 4,
-    x: 448,
-    y: 256,
+    x: 1024,
+    y: 320,
     img: "../Imagem/personagens/clara.png",
   },
   plataforma1: [
     {
       id: "ch_1",
-      x: 128,
-      y: 128,
-      width: 64,
-      height: 64,
-      img: "",
+      x: 1144,
+      y: 378,
+      width: 0,
+      height: 0,
+      img: "../Imagem/cenario/assets/armario/armario1.png",
       efeito: false,
     },
+    // {
+    //   id: "ch_2",
+    //   x: 1152,
+    //   y: 320,
+    //   width: 64,
+    //   height: 64,
+    //   img: "",
+    //   efeito: false,
+    // },
+    // {
+    //   id: "ch_3",
+    //   x: 1216,
+    //   y: 384,
+    //   width: 64,
+    //   height: 64,
+    //   img: "",
+    //   efeito: false,
+    // },
   ],
   // PAREDES INVISÍVEIS — cada objeto é um retângulo de colisão
   // x, y = posição do pixel (canto superior esquerdo)
   // width, height = tamanho da área bloqueada
   paredes: [
     {
-        id: "parede_1",
-        x: 1152,
-        y: 405,
-        width: 64,
-        height: 64,
+      id: "parede_1",
+      x: 1186,
+      y: 400,
+      width: 0.5,
+      height: 0.5,
+      img: "",
     },
   ],
   caixa1: {
@@ -59,4 +78,3 @@ const Fase1 = {
 };
 
 export default Fase1;
-

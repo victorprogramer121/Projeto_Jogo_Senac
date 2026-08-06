@@ -1,6 +1,6 @@
 import Personagem from "../Entitys/personagens.js";
 import Plataforma from "../Entitys/plataforma.js";
-import Fase3 from "../Data/fase3.js"
+import Fase3 from "../Data/fase3.js";
 
 const tela3 = document.querySelector("#tela3");
 const ctx = tela3.getContext("2d");
@@ -10,13 +10,10 @@ tela3.height = window.innerHeight;
 
 const quadrado = 64;
 
-const jogador = new Personagem(
-    Fase3.player.x,
-    Fase3.player.y
-);
+const jogador = new Personagem(Fase3.player.x, Fase3.player.y, Fase3);
 
 function criarCenario() {
-    Fase3.plataforma1.forEach((square) => {
+  Fase3.plataforma1.forEach((square) => {
     const p = new Plataforma(square.x, square.y, square.img);
     p.desenhar(ctx);
   });
@@ -92,10 +89,7 @@ function desenhar() {
 
   jogador.atualizar(input);
 
-  
-
   jogador.desenhar(ctx);
-  
 
   requestAnimationFrame(desenhar);
 }

@@ -4,7 +4,7 @@ class Plataforma{
     constructor(x,y,img_url){
         this.x=x;
         this.y=y;
-        this.tamanho=64;
+        this.tamanho=86;
         this.img = new Image();
         this.img.src=img_url
     }

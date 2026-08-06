@@ -12,7 +12,8 @@ const quadrado = 64;
  
 const jogador = new Personagem(
     Inicio.player.x,
-    Inicio.player.y
+    Inicio.player.y,
+    Inicio
 );
  
 function criarCenario() {
@@ -126,25 +127,26 @@ function verificarInteracoes() {
   if (!tocandoAlgumaZona) interacaoAtiva = null;
 }
  
-function desenharGrid() {
-  ctx.font = "9px Arial";
-  ctx.fillStyle = "black";
-  ctx.strokeStyle = "black";
+// function desenharGrid() {
+//   ctx.font = "9px Arial";
+//   ctx.fillStyle = "black";
+//   ctx.strokeStyle = "black";
  
-  for (let y = 0; y <= tela.height; y += quadrado) {
-    for (let x = 0; x <= tela.width; x += quadrado) {
-      ctx.strokeRect(x + 0.5, y + 0.5, quadrado, quadrado);
+//   for (let y = 0; y <= tela.height; y += quadrado) {
+//     for (let x = 0; x <= tela.width; x += quadrado) {
+//       ctx.strokeRect(x + 0.5, y + 0.5, quadrado, quadrado);
  
-      ctx.fillText(`x:${x} y:${y}`, x + 2, y + 10);
-    }
-  }
-}
+//       ctx.fillText(`x:${x} y:${y}`, x + 2, y + 10);
+//     }
+//   }
+// }
  
 function desenhar() {
   ctx.clearRect(0, 0, tela.width, tela.height);
  
-  desenharGrid();
+  // desenharGrid();
   criarCenario();
+  
  
   jogador.atualizar(input);
  
