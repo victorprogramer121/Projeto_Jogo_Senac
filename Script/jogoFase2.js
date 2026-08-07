@@ -194,7 +194,7 @@ function verificarInteracoes() {
 function desenhar() {
   ctx.clearRect(0, 0, tela2.width, tela2.height);
 
-  desenharGrid();
+  desenharGrid();  // Comentar essa linha caso queira tirar o grid
   criarCenario();
   criarCenario2();
 
