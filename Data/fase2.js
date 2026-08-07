@@ -28,11 +28,11 @@ const Fase2 = {
   // width, height = tamanho da área bloqueada
   paredes: [
     {
-        id: "parede_1",
-        x: 1152,
-        y: 405,
-        width: 64,
-        height: 64,
+      id: "parede_1",
+      x: 1152,
+      y: 405,
+      width: 64,
+      height: 64,
     },
   ],
   interacoes: [
@@ -43,7 +43,7 @@ const Fase2 = {
       width: 16,
       height: 64,
       tipo: "porta",
-      destino: "index.html", // link para a fase dois
+      destino: "fase3.html", // link para a fase dois
     },
     {
       id: "porta_casa2",
@@ -52,7 +52,7 @@ const Fase2 = {
       width: 24,
       height: 64,
       tipo: "porta",
-      destino: "index.html", // link para a fase dois
+      destino: "fase3.html", // link para a fase dois
     },
   ],
   caixa1: {
@@ -79,4 +79,3 @@ const Fase2 = {
 };
 
 export default Fase2;
-

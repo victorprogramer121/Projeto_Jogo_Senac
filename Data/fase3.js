@@ -28,11 +28,11 @@ const Fase3 = {
   // width, height = tamanho da área bloqueada
   paredes: [
     {
-        id: "parede_1",
-        x: 1152,
-        y: 405,
-        width: 64,
-        height: 64,
+      id: "parede_1",
+      x: 1152,
+      y: 405,
+      width: 64,
+      height: 64,
     },
   ],
   interacoes: [
@@ -79,4 +79,3 @@ const Fase3 = {
 };
 
 export default Fase3;
-
