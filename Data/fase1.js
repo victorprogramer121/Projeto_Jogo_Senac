@@ -62,7 +62,7 @@ const Fase1 = {
       width: 16,
       height: 64,
       tipo: "porta",
-      destino: "fase1.html", // link para a fase dois
+      destino: "fase2.html", // link para a fase dois
     },
     {
       id: "porta_casa2",
@@ -71,7 +71,7 @@ const Fase1 = {
       width: 24,
       height: 64,
       tipo: "porta",
-      destino: "fase1.html", // link para a fase dois
+      destino: "fase2.html", // link para a fase dois
     },
   ],
   caixa1: {
